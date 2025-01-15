@@ -14,6 +14,11 @@ namespace FinanceHub.UserInterface.Events
         }
         public void CreateDemoUser()
         {
+            if (financeHubContext.Users.Count() > 0)
+            {
+                return;
+            }
+
             User newUser = new User();
             newUser.Name = "Furkan";
             newUser.LastName = "Kapukaya";
@@ -27,6 +32,11 @@ namespace FinanceHub.UserInterface.Events
 
         public void CreateCategories()
         {
+            if (financeHubContext.Categories.Count() > 0)
+            {
+                return;
+            }
+
             Category category = new Category();
             category.Name = "Akaryakıt";
             financeHubContext.Categories.Add(category);
