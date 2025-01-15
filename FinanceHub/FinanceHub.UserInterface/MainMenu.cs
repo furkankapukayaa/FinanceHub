@@ -68,9 +68,16 @@ namespace FinanceHub.UserInterface
             thread.Start();
         }
 
+        private void OpenCurrencyExchangePage()
+        {
+            Application.Run(new CurrencyExchange(_loggedInUserId));
+        }
         private void btnExchange_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bu özellik şu an için kullanılamamaktadır.", "FinanceHub", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+            thread = new Thread(OpenCurrencyExchangePage);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
         private void OpenTransactionsPage()
