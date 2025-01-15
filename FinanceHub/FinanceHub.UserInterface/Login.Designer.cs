@@ -80,7 +80,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(177, 26);
             txtEmail.TabIndex = 0;
-            txtEmail.Text = "furkankapukayaa@gmail.com";
             // 
             // txtPassword
             // 
@@ -90,7 +89,6 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(177, 26);
             txtPassword.TabIndex = 1;
-            txtPassword.Text = "furkan123";
             // 
             // btnLogin
             // 
