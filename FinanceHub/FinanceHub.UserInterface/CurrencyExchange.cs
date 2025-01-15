@@ -20,7 +20,7 @@ namespace FinanceHub.UserInterface
         public void DataLoad()
         {
             comboBoxCurrencyAccount.Items.Clear();
-            comboBoxCurrencyAccount.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false || x.Currency == CurrencyType.Dolar || x.Currency == CurrencyType.Euro).Select(x => x.Name + " (" + x.Balance + " " + x.Currency.ToString() + ")").ToArray());
+            comboBoxCurrencyAccount.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false && x.Currency != CurrencyType.TL).Select(x => x.Name + " (" + x.Balance + " " + x.Currency.ToString() + ")").ToArray());
 
             comboBoxTurkishLiraAccount.Items.Clear();
             comboBoxTurkishLiraAccount.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false && x.Currency == CurrencyType.TL).Select(x => x.Name + " (" + x.Balance + " " + x.Currency.ToString() + ")").ToArray());
