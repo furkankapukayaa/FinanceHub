@@ -1,5 +1,6 @@
 ﻿using FinanceHub.DataAccess.Context;
 using FinanceHub.Entity.DomainObjects;
+using FinanceHub.UserInterface.Events;
 
 namespace FinanceHub.UserInterface
 {
@@ -8,6 +9,8 @@ namespace FinanceHub.UserInterface
         public Login()
         {
             InitializeComponent();
+            AppSettings appSettings = new AppSettings();
+            appSettings.AllProcess();
         }
 
         public FinanceHubContext financeHubContext = new FinanceHubContext();

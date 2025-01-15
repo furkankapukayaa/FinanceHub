@@ -11,7 +11,7 @@ namespace FinanceHub.Entity.DomainObjects
 
         [Key, Required]
         public string Id { get; set; }
-        public DateTime CreatedAtTime { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAtTime { get; set; } = DateTime.Now;
         public DateTime? UpdatedAtTime { get; set; }
         public DateTime? DeletedAtTime { get; set; }
         public bool IsDeleted { get; set; } = false;
