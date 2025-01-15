@@ -80,6 +80,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(177, 26);
             txtEmail.TabIndex = 0;
+            txtEmail.Text = "furkankapukayaa@gmail.com";
             // 
             // txtPassword
             // 
@@ -89,6 +90,7 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(177, 26);
             txtPassword.TabIndex = 1;
+            txtPassword.Text = "furkan123";
             // 
             // btnLogin
             // 
@@ -100,6 +102,7 @@
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Giriş Yap";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // panelRegister
             // 
@@ -124,9 +127,11 @@
             btnRegister.TabIndex = 3;
             btnRegister.Text = "Hesabınız yok mu? Tıklayarak kaydolun, gelir ve giderlerinizi kolayca kontrol altına alın!";
             btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // Login
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(608, 241);

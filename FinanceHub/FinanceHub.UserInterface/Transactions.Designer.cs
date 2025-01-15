@@ -41,6 +41,7 @@
             lblEndDateTime = new Label();
             pictureBoxLogo = new PictureBox();
             btnBack = new Button();
+            btnFilterReset = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTransactions).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
@@ -55,17 +56,19 @@
             dataGridViewTransactions.ReadOnly = true;
             dataGridViewTransactions.Size = new Size(776, 312);
             dataGridViewTransactions.TabIndex = 0;
+            dataGridViewTransactions.CellFormatting += dataGridViewTransactions_CellFormatting;
             // 
             // btnFilter
             // 
             btnFilter.Cursor = Cursors.Hand;
             btnFilter.Font = new Font("Bahnschrift", 9.75F);
-            btnFilter.Location = new Point(647, 21);
+            btnFilter.Location = new Point(640, 27);
             btnFilter.Name = "btnFilter";
-            btnFilter.Size = new Size(77, 39);
+            btnFilter.Size = new Size(106, 31);
             btnFilter.TabIndex = 7;
             btnFilter.Text = "Filtrele";
             btnFilter.UseVisualStyleBackColor = true;
+            btnFilter.Click += btnFilter_Click;
             // 
             // lblCategory
             // 
@@ -173,12 +176,31 @@
             btnBack.Size = new Size(46, 46);
             btnBack.TabIndex = 23;
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // btnFilterReset
+            // 
+            btnFilterReset.Cursor = Cursors.Hand;
+            btnFilterReset.FlatAppearance.BorderSize = 0;
+            btnFilterReset.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnFilterReset.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnFilterReset.FlatStyle = FlatStyle.Flat;
+            btnFilterReset.Font = new Font("Bahnschrift", 9.75F);
+            btnFilterReset.Location = new Point(640, 58);
+            btnFilterReset.Name = "btnFilterReset";
+            btnFilterReset.Size = new Size(106, 23);
+            btnFilterReset.TabIndex = 24;
+            btnFilterReset.Text = "Filtreyi Sıfırla";
+            btnFilterReset.UseVisualStyleBackColor = true;
+            btnFilterReset.Visible = false;
+            btnFilterReset.Click += btnFilterReset_Click;
             // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnFilterReset);
             Controls.Add(btnBack);
             Controls.Add(pictureBoxLogo);
             Controls.Add(lblEndDateTime);
@@ -215,5 +237,6 @@
         private Label lblEndDateTime;
         private PictureBox pictureBoxLogo;
         private Button btnBack;
+        private Button btnFilterReset;
     }
 }

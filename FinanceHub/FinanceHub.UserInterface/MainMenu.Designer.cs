@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             imageList = new ImageList(components);
             pictureBoxLogo = new PictureBox();
-            lblDateTime = new Label();
+            lblCalendar = new Label();
             lblWelcomeUser = new Label();
             btnLogout = new Button();
             btnOverview = new Button();
@@ -41,6 +41,7 @@
             btnTransactions = new Button();
             btnCategories = new Button();
             btnUserOperations = new Button();
+            timerCalendar = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -59,22 +60,23 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(12, 12);
+            pictureBoxLogo.Location = new Point(578, 12);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(210, 91);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 2;
             pictureBoxLogo.TabStop = false;
             // 
-            // lblDateTime
+            // lblCalendar
             // 
-            lblDateTime.AutoSize = true;
-            lblDateTime.Font = new Font("Bahnschrift", 9.75F);
-            lblDateTime.Location = new Point(666, 40);
-            lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(74, 16);
-            lblDateTime.TabIndex = 3;
-            lblDateTime.Text = "TarihVeSaat";
+            lblCalendar.AutoSize = true;
+            lblCalendar.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            lblCalendar.Location = new Point(12, 35);
+            lblCalendar.Name = "lblCalendar";
+            lblCalendar.Size = new Size(94, 19);
+            lblCalendar.TabIndex = 3;
+            lblCalendar.Text = "TarihVeSaat";
+            lblCalendar.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblWelcomeUser
             // 
@@ -100,6 +102,7 @@
             btnLogout.Size = new Size(46, 46);
             btnLogout.TabIndex = 6;
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnOverview
             // 
@@ -119,6 +122,7 @@
             btnOverview.Text = "Genel Bakış";
             btnOverview.TextAlign = ContentAlignment.BottomCenter;
             btnOverview.UseVisualStyleBackColor = true;
+            btnOverview.Click += btnOverview_Click;
             // 
             // btnAccountOperations
             // 
@@ -138,6 +142,7 @@
             btnAccountOperations.Text = "Hesap İşlemleri";
             btnAccountOperations.TextAlign = ContentAlignment.BottomCenter;
             btnAccountOperations.UseVisualStyleBackColor = true;
+            btnAccountOperations.Click += btnAccountOperations_Click;
             // 
             // btnExchange
             // 
@@ -157,6 +162,7 @@
             btnExchange.Text = "Döviz İşlemleri";
             btnExchange.TextAlign = ContentAlignment.BottomCenter;
             btnExchange.UseVisualStyleBackColor = true;
+            btnExchange.Click += btnExchange_Click;
             // 
             // btnTransactions
             // 
@@ -176,6 +182,7 @@
             btnTransactions.Text = "Hareketler";
             btnTransactions.TextAlign = ContentAlignment.BottomCenter;
             btnTransactions.UseVisualStyleBackColor = true;
+            btnTransactions.Click += btnTransactions_Click;
             // 
             // btnCategories
             // 
@@ -195,6 +202,7 @@
             btnCategories.Text = "Kategoriler";
             btnCategories.TextAlign = ContentAlignment.BottomCenter;
             btnCategories.UseVisualStyleBackColor = true;
+            btnCategories.Click += btnCategories_Click;
             // 
             // btnUserOperations
             // 
@@ -214,6 +222,11 @@
             btnUserOperations.Text = "Kullanıcı İşlemleri";
             btnUserOperations.TextAlign = ContentAlignment.BottomCenter;
             btnUserOperations.UseVisualStyleBackColor = true;
+            btnUserOperations.Click += btnUserOperations_Click;
+            // 
+            // timerCalendar
+            // 
+            timerCalendar.Tick += timerCalendar_Tick;
             // 
             // MainMenu
             // 
@@ -228,7 +241,7 @@
             Controls.Add(btnOverview);
             Controls.Add(btnLogout);
             Controls.Add(lblWelcomeUser);
-            Controls.Add(lblDateTime);
+            Controls.Add(lblCalendar);
             Controls.Add(pictureBoxLogo);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "MainMenu";
@@ -242,7 +255,7 @@
 
         private ImageList imageList;
         private PictureBox pictureBoxLogo;
-        private Label lblDateTime;
+        private Label lblCalendar;
         private Label lblWelcomeUser;
         private Button btnLogout;
         private Button btnOverview;
@@ -251,5 +264,6 @@
         private Button btnTransactions;
         private Button btnCategories;
         private Button btnUserOperations;
+        private System.Windows.Forms.Timer timerCalendar;
     }
 }

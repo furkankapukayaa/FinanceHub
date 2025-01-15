@@ -72,6 +72,7 @@
             dataGridViewCategories.ReadOnly = true;
             dataGridViewCategories.Size = new Size(493, 231);
             dataGridViewCategories.TabIndex = 16;
+            dataGridViewCategories.CellClick += dataGridViewCategories_CellClick;
             // 
             // btnBack
             // 
@@ -87,6 +88,7 @@
             btnBack.Size = new Size(46, 46);
             btnBack.TabIndex = 17;
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnCategoryDelete
             // 
@@ -98,6 +100,7 @@
             btnCategoryDelete.TabIndex = 20;
             btnCategoryDelete.Text = "Sil";
             btnCategoryDelete.UseVisualStyleBackColor = true;
+            btnCategoryDelete.Click += btnCategoryDelete_Click;
             // 
             // btnCategoryUpdate
             // 
@@ -109,6 +112,7 @@
             btnCategoryUpdate.TabIndex = 19;
             btnCategoryUpdate.Text = "Güncelle";
             btnCategoryUpdate.UseVisualStyleBackColor = true;
+            btnCategoryUpdate.Click += btnCategoryUpdate_Click;
             // 
             // btnCategoryAdd
             // 
@@ -120,6 +124,7 @@
             btnCategoryAdd.TabIndex = 18;
             btnCategoryAdd.Text = "Ekle";
             btnCategoryAdd.UseVisualStyleBackColor = true;
+            btnCategoryAdd.Click += btnCategoryAdd_Click;
             // 
             // groupBoxCategoryOperations
             // 

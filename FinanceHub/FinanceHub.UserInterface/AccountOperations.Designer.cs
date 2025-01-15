@@ -90,6 +90,7 @@
             btnMoneyTransferConfirm.TabIndex = 19;
             btnMoneyTransferConfirm.Text = "Onayla";
             btnMoneyTransferConfirm.UseVisualStyleBackColor = true;
+            btnMoneyTransferConfirm.Click += btnMoneyTransferConfirm_Click;
             // 
             // txtMoneyTransferAmount
             // 
@@ -217,6 +218,7 @@
             btnSpendingConfirm.TabIndex = 15;
             btnSpendingConfirm.Text = "Onayla";
             btnSpendingConfirm.UseVisualStyleBackColor = true;
+            btnSpendingConfirm.Click += btnSpendingConfirm_Click;
             // 
             // lblSpendingAccountUsed
             // 
@@ -316,6 +318,7 @@
             btnAccountDelete.TabIndex = 7;
             btnAccountDelete.Text = "Sil";
             btnAccountDelete.UseVisualStyleBackColor = true;
+            btnAccountDelete.Click += btnAccountDelete_Click;
             // 
             // btnAccountUpdate
             // 
@@ -327,6 +330,7 @@
             btnAccountUpdate.TabIndex = 6;
             btnAccountUpdate.Text = "Güncelle";
             btnAccountUpdate.UseVisualStyleBackColor = true;
+            btnAccountUpdate.Click += btnAccountUpdate_Click;
             // 
             // btnAccountAdd
             // 
@@ -338,6 +342,7 @@
             btnAccountAdd.TabIndex = 5;
             btnAccountAdd.Text = "Ekle";
             btnAccountAdd.UseVisualStyleBackColor = true;
+            btnAccountAdd.Click += btnAccountAdd_Click;
             // 
             // lblAccountNo
             // 
@@ -469,6 +474,8 @@
             dataGridViewAccounts.ReadOnly = true;
             dataGridViewAccounts.Size = new Size(776, 245);
             dataGridViewAccounts.TabIndex = 0;
+            dataGridViewAccounts.CellClick += dataGridViewAccounts_CellClick;
+            dataGridViewAccounts.CellFormatting += dataGridViewAccounts_CellFormatting;
             // 
             // groupBoxBalanceAdd
             // 
@@ -514,6 +521,7 @@
             btnBalanceConfirm.TabIndex = 10;
             btnBalanceConfirm.Text = "Onayla";
             btnBalanceConfirm.UseVisualStyleBackColor = true;
+            btnBalanceConfirm.Click += btnBalanceConfirm_Click;
             // 
             // lblBalanceAccountUsed
             // 
@@ -561,6 +569,7 @@
             btnBack.Size = new Size(46, 46);
             btnBack.TabIndex = 14;
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // AccountOperations
             // 

@@ -55,6 +55,7 @@
             btnUpdate.TabIndex = 20;
             btnUpdate.Text = "Güncelle";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // txtPhone
             // 
@@ -63,6 +64,7 @@
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(177, 26);
             txtPhone.TabIndex = 19;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // lblPhone
             // 
@@ -80,7 +82,6 @@
             txtPassword.Font = new Font("Bahnschrift", 11.25F);
             txtPassword.Location = new Point(68, 332);
             txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(177, 26);
             txtPassword.TabIndex = 18;
             // 
@@ -176,6 +177,7 @@
             btnBack.Size = new Size(46, 46);
             btnBack.TabIndex = 26;
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // UserOperations
             // 

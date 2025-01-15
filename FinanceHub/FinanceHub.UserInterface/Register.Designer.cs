@@ -141,6 +141,7 @@
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(177, 26);
             txtPhone.TabIndex = 4;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // lblPhone
             // 
@@ -176,6 +177,7 @@
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Hesabınız var mı? Tıklayarak giriş yapın ve harcamalarınızı yönetin!";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnRegister
             // 
@@ -187,6 +189,7 @@
             btnRegister.TabIndex = 5;
             btnRegister.Text = "Kayıt Ol";
             btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // Register
             // 
