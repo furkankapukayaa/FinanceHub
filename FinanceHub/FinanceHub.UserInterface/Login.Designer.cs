@@ -141,6 +141,7 @@
             Controls.Add(lblEmail);
             Controls.Add(pictureBoxLogo);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Giriş";

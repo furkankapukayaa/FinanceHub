@@ -198,6 +198,7 @@
             Controls.Add(lblName);
             Controls.Add(pictureBoxLogo);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserOperations";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Kullanıcı İşlemleri";

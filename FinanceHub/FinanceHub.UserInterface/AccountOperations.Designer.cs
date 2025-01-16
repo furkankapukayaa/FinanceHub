@@ -584,6 +584,7 @@
             Controls.Add(groupBoxSpendingAdd);
             Controls.Add(groupBoxMoneyTransfer);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AccountOperations";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Hesap İşlemleri";

@@ -161,6 +161,7 @@
             Controls.Add(btnBack);
             Controls.Add(dataGridViewCategories);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Categories";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Kategoriler";

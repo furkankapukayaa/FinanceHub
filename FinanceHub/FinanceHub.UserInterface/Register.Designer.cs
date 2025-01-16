@@ -210,6 +210,7 @@
             Controls.Add(lblName);
             Controls.Add(pictureBoxLogo);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Kayıt";

@@ -182,6 +182,7 @@
             Controls.Add(lblMonthlyIncome);
             Controls.Add(btnBack);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CurrencyExchange";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Döviz İşlemleri";

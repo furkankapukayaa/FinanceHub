@@ -365,6 +365,7 @@
             Controls.Add(panelExpenses);
             Controls.Add(panelIncomes);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Overview";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Genel Bakış";

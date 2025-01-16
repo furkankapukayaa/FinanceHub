@@ -244,6 +244,7 @@
             Controls.Add(lblCalendar);
             Controls.Add(pictureBoxLogo);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainMenu";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

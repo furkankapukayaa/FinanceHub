@@ -214,6 +214,7 @@
             Controls.Add(btnFilter);
             Controls.Add(dataGridViewTransactions);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Transactions";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinanceHub - Hareketler";
