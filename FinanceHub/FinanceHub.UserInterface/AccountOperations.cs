@@ -51,7 +51,7 @@ namespace FinanceHub.UserInterface
             comboBoxSpendingAccountUsed.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false).Select(x => x.Name).ToArray());
 
             comboBoxSpendingCategory.Items.Clear();
-            comboBoxSpendingCategory.Items.AddRange(financeHubContext.Categories.Where(x => x.IsDeleted == false).Select(x => x.Name).ToArray());
+            comboBoxSpendingCategory.Items.AddRange(financeHubContext.Categories.Where(x => x.IsDeleted == false && x.UserId == _loggedInUserId).Select(x => x.Name).ToArray());
 
             comboBoxMoneyTransferSendingAccount.Items.Clear();
             comboBoxMoneyTransferSendingAccount.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false).Select(x => x.Name).ToArray());
@@ -176,6 +176,7 @@ namespace FinanceHub.UserInterface
             txtAccountBalance.Enabled = false;
             comboBoxAccountCurrency.Enabled = false;
             comboBoxAccountType.Enabled = false;
+            btnClearSelected.Visible = true;
         }
 
         private void btnAccountUpdate_Click(object sender, EventArgs e)
@@ -351,6 +352,15 @@ namespace FinanceHub.UserInterface
                     }
                 }
             }
+        }
+
+        private void btnClearSelected_Click(object sender, EventArgs e)
+        {
+            ClearInput();
+            txtAccountBalance.Enabled = true;
+            comboBoxAccountCurrency.Enabled = true;
+            comboBoxAccountType.Enabled = true;
+            btnClearSelected.Visible = false;
         }
     }
 }

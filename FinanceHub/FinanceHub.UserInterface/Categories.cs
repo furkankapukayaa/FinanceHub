@@ -18,9 +18,10 @@ namespace FinanceHub.UserInterface
 
         public void DataList()
         {
-            dataGridViewCategories.DataSource = financeHubContext.Categories.Where(x => x.IsDeleted == false).OrderByDescending(x => x.CreatedAtTime).ToList();
+            dataGridViewCategories.DataSource = financeHubContext.Categories.Where(x => x.IsDeleted == false && x.UserId == _loggedInUserId).OrderByDescending(x => x.CreatedAtTime).ToList();
 
             dataGridViewCategories.Columns["Id"].Visible = false;
+            dataGridViewCategories.Columns["UserId"].Visible = false;
             dataGridViewCategories.Columns["IsDeleted"].Visible = false;
             dataGridViewCategories.Columns["CreatedAtTime"].Visible = false;
             dataGridViewCategories.Columns["UpdatedAtTime"].Visible = false;
@@ -47,6 +48,7 @@ namespace FinanceHub.UserInterface
             {
                 Category category = new Category
                 {
+                    UserId = _loggedInUserId,
                     Name = txtCategoryName.Text,
                 };
 

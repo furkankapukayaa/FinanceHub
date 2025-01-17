@@ -23,7 +23,7 @@ namespace FinanceHub.UserInterface
             comboBoxAccount.Items.AddRange(financeHubContext.Accounts.Where(x => x.IsDeleted == false).Select(x => x.Name).ToArray());
 
             comboBoxCategory.Items.Clear();
-            comboBoxCategory.Items.AddRange(financeHubContext.Categories.Where(x => x.IsDeleted == false).Select(x => x.Name).ToArray());
+            comboBoxCategory.Items.AddRange(financeHubContext.Categories.Where(x => x.IsDeleted == false && x.UserId == _loggedInUserId).Select(x => x.Name).ToArray());
 
             dataGridViewTransactions.DataSource = financeHubContext.Spendings.Where(x => x.IsDeleted == false).OrderByDescending(x => x.CreatedAtTime).Include(x => x.Category).Include(x => x.Account).ToList();
 

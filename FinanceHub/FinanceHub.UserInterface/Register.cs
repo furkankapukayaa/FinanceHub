@@ -1,5 +1,6 @@
 ﻿using FinanceHub.DataAccess.Context;
 using FinanceHub.Entity.DomainObjects;
+using FinanceHub.UserInterface.Events;
 
 namespace FinanceHub.UserInterface
 {
@@ -59,6 +60,9 @@ namespace FinanceHub.UserInterface
 
                                 financeHubContext.Users.Add(user);
                                 financeHubContext.SaveChanges();
+
+                                AppSettings appSettings = new AppSettings();
+                                appSettings.CreateCategories(user.Id);
 
                                 this.Close();
                                 thread = new Thread(OpenLoginPage);

@@ -72,6 +72,7 @@
             comboBoxBalanceAccountUsed = new ComboBox();
             pictureBoxLogo = new PictureBox();
             btnBack = new Button();
+            btnClearSelected = new Button();
             groupBoxMoneyTransfer.SuspendLayout();
             groupBoxSpendingAdd.SuspendLayout();
             groupBoxAccountDetails.SuspendLayout();
@@ -571,11 +572,24 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
+            // btnClearSelected
+            // 
+            btnClearSelected.Cursor = Cursors.Hand;
+            btnClearSelected.Font = new Font("Bahnschrift", 9.75F);
+            btnClearSelected.Location = new Point(673, 332);
+            btnClearSelected.Name = "btnClearSelected";
+            btnClearSelected.Size = new Size(121, 25);
+            btnClearSelected.TabIndex = 24;
+            btnClearSelected.Text = "Seçimi Temizle";
+            btnClearSelected.UseVisualStyleBackColor = true;
+            btnClearSelected.Click += btnClearSelected_Click;
+            // 
             // AccountOperations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1022, 615);
+            Controls.Add(btnClearSelected);
             Controls.Add(btnBack);
             Controls.Add(pictureBoxLogo);
             Controls.Add(dataGridViewAccounts);
@@ -646,5 +660,6 @@
         private ComboBox comboBoxBalanceAccountUsed;
         private PictureBox pictureBoxLogo;
         private Button btnBack;
+        private Button btnClearSelected;
     }
 }

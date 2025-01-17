@@ -10,7 +10,7 @@ namespace FinanceHub.UserInterface
         {
             InitializeComponent();
             AppSettings appSettings = new AppSettings();
-            appSettings.AllProcess();
+            appSettings.CreateDemoUser();
         }
 
         public FinanceHubContext financeHubContext = new FinanceHubContext();
