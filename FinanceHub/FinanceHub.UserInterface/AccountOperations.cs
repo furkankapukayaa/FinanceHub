@@ -61,14 +61,15 @@ namespace FinanceHub.UserInterface
 
             dataGridViewAccounts.DataSource = financeHubContext.Accounts.Where(x => x.IsDeleted == false).Include(x => x.Owner).OrderByDescending(x => x.CreatedAtTime).ToList();
 
+            dataGridViewAccounts.Columns["Id"].Visible = false;
             dataGridViewAccounts.Columns["IsDeleted"].Visible = false;
             dataGridViewAccounts.Columns["CreatedAtTime"].Visible = false;
             dataGridViewAccounts.Columns["UpdatedAtTime"].Visible = false;
             dataGridViewAccounts.Columns["DeletedAtTime"].Visible = false;
             dataGridViewAccounts.Columns["Status"].Visible = false;
 
-            dataGridViewAccounts.Columns["Id"].DisplayIndex = 0;
-            dataGridViewAccounts.Columns["Id"].HeaderText = "Hesap Numarası";
+            dataGridViewAccounts.Columns["No"].DisplayIndex = 0;
+            dataGridViewAccounts.Columns["No"].HeaderText = "Hesap Numarası";
             dataGridViewAccounts.Columns["Owner"].HeaderText = "Hesap Sahibi";
             dataGridViewAccounts.Columns["Name"].HeaderText = "Hesap Adı";
             dataGridViewAccounts.Columns["Balance"].HeaderText = "Bakiye";
@@ -105,8 +106,16 @@ namespace FinanceHub.UserInterface
             }
             else
             {
+                Random random = new Random();
+                int accountNo = random.Next(1000000000, 2147483647);
+                while (financeHubContext.Accounts.Any(x => x.No == accountNo))
+                {
+                    accountNo = random.Next(1000000000, 2147483647);
+                }
+
                 Account account = new Account
                 {
+                    No = accountNo,
                     Owner = financeHubContext.Users.FirstOrDefault(u => u.Id == _loggedInUserId),
                     Name = txtAccountName.Text,
                     Balance = Convert.ToInt32(txtAccountBalance.Text),
@@ -155,7 +164,7 @@ namespace FinanceHub.UserInterface
 
                 if (account != null)
                 {
-                    txtAccountNo.Text = account.Id;
+                    txtAccountNo.Text = account.No.ToString();
                     txtAccountOwner.Text = account.Owner.Name + " " + account.Owner.LastName;
                     txtAccountName.Text = account.Name;
                     txtAccountBalance.Text = account.Balance.ToString();
